@@ -9,8 +9,8 @@ const Home = () => {
     <>
     <div>
     <Navbar className='d-flex position-fixed w-100  justify-content-center bg-dark  border-bottom p-2 fs-5'>
-    <NavLink to={'/'} className='px-4 text-light text-decoration-none' end> Home </NavLink>
-        <NavLink to={'/store'} className='px-4 text-light text-decoration-none'> Store </NavLink>
+    <NavLink to={'/'} className='px-4 text-light text-decoration-none' end > Home </NavLink>
+        <NavLink to={'/store'} className='px-4 text-light text-decoration-none' > Store </NavLink>
         <NavLink to={'/about'} className='px-4 text-light text-decoration-none'> About </NavLink>
 
        

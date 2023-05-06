@@ -13,9 +13,9 @@ const Header = () => {
   return (
 <>
     <Navbar className='d-flex position-fixed w-100 position-relative justify-content-center bg-dark  border-bottom p-2 fs-5'>
-    <NavLink to={'/'} className='px-4 text-light text-decoration-none' end> Home </NavLink>
+    <NavLink to={'/'} className='px-4 text-light text-decoration-none' end > Home </NavLink>
         <NavLink to={'/store'} className='px-4 text-light text-decoration-none'> Store </NavLink>
-        <NavLink to={'/about'} className='px-4 text-light text-decoration-none'> About </NavLink>
+        <NavLink to={'/about'} className='px-4 text-light text-decoration-none' > About </NavLink>
 
         <Button onClick={()=> setShowCart(true)} className='fs-4  position-absolute text-light top-0 end-0 ' variant="Light">
          Cart  
