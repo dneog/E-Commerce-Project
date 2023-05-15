@@ -5,10 +5,12 @@ import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import Cart from '../Cart/Cart';
 import { NavLink} from 'react-router-dom';
-
+import { UseCart } from '../Context/CartContext';
 
 
 const Header = () => {
+  const {CartList}= UseCart()
+  // const countItems= CartList.reduce((current, Item)=> {current+ Item.quantity}, 0)
   const [showCart, setShowCart]= useState(false)
   return (
 <>
@@ -19,11 +21,11 @@ const Header = () => {
 
         <Button onClick={()=> setShowCart(true)} className='fs-4  position-absolute text-light top-0 end-0 ' variant="Light">
          Cart  
-      <Badge className='mx-2 fs-5 '  bg="secondary"> 2</Badge>
+      <Badge className='mx-2 fs-5 '  bg="secondary">{CartList.length}</Badge>
     </Button>
 
     </Navbar>
-
+  
    {/* <Navbar className='d-flex position-fixed w-100 justify-content-between bg-dark  border-bottom p-1 pt-2' >
    <Nav className='px-5 ms-4'></Nav>
    

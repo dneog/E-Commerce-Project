@@ -1,16 +1,19 @@
 import React from 'react'
-import {Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap';
+import { UseCart } from './Context/CartContext';
 const ProductPage = ({product}) => {
-    const {album, imageUrl, price} = product
+  const { addToCart } = UseCart();
+   
+   
   return (
    
-        <div>
-        <p className='fs-4'>{album}</p>
-        <img src={imageUrl} alt="" />
+        <div key={product.id}>
+        <p className='fs-4'>{product.album}</p>
+        <img src={product.imageUrl} alt="" />
       
         <div className='d-flex pt-4 pb-5 justify-content-between'>
-        <p>${price}</p>
-        <Button variant="primary" size="sm">Add to Cart</Button>
+        <p>${product.price}</p>
+        <Button variant="primary" size="sm" onClick={()=> addToCart(product)}>Add to Cart</Button>
         </div>
        
         </div>
