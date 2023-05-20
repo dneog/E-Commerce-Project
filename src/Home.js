@@ -12,6 +12,7 @@ const Home = () => {
     <NavLink to={'/'} className='px-4 text-light text-decoration-none' end > Home </NavLink>
         <NavLink to={'/store'} className='px-4 text-light text-decoration-none' > Store </NavLink>
         <NavLink to={'/about'} className='px-4 text-light text-decoration-none'> About </NavLink>
+        <NavLink to={'/contact'} className='px-4 text-light text-decoration-none'> Contact us </NavLink>
 
        
 
