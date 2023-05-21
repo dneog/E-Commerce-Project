@@ -37,7 +37,7 @@ const Cart = ({setShowCart}) => {
        
         <div key={Item.id} className='d-flex align-items-center p-2'>
       
-        <img className='w-25 rounded' src={Item.imageUrl} alt="" />
+        <img className='w-25 rounded' src={Item.imageUrl[0]} alt="" />
         <p className='p-2'>{Item.album}</p>
         <p className='ps-4 pe-4 '>${Item.price}</p>
         <span>
