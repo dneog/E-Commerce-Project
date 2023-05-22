@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from 'react-bootstrap/Card';
 import { useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -6,8 +6,9 @@ import Form from 'react-bootstrap/Form';
 import { useNavigate, Routes, Route} from 'react-router-dom';
 
 const Login = () => {
+  
   const navigate= useNavigate();
-  const [isLogin, setIsLogin] = useState(true);
+  // const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading]= useState(false);
   const email= useRef(null);
   const password= useRef(null);
@@ -21,9 +22,9 @@ const Login = () => {
    
     setLoading(true)
     let url;
-    if(isLogin){
+   
       url= 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE'
-    }
+   
     fetch(url,
       {
         method: 'POST',
@@ -53,7 +54,7 @@ const Login = () => {
       })
           
           .then(data=> {
-            // authCtx.login(data.idToken);
+          //  login(data.idToken);
             navigate('/Store')
           }).catch(err=> {
             alert(err.message)

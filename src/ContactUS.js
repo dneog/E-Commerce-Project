@@ -4,9 +4,10 @@ import { NavLink} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-
+import { UseCart } from './Context/CartContext';
 
 const ContactUS = () => {
+  const {isLoggedin}= UseCart();
   const name= useRef(null);
   const email= useRef(null);
   const contact= useRef(null);
@@ -32,7 +33,12 @@ const ContactUS = () => {
     <div>
        <Navbar className='d-flex position-fixed w-100  justify-content-center bg-dark  border-bottom p-2 fs-5'>
     <NavLink to={'/'} className='px-4 text-light text-decoration-none' end > Home </NavLink>
-        <NavLink to={'/store'} className='px-4 text-light text-decoration-none'> Store </NavLink>
+    {isLoggedin && (
+        <NavLink to={'/store'} className='px-4 text-light text-decoration-none' > Store </NavLink>
+        )}
+    {!isLoggedin && (
+        <NavLink to={'/login'} className='px-4 text-light text-decoration-none' > Store </NavLink>
+        )}
         <NavLink to={'/about'} className='px-4 text-light text-decoration-none'> About </NavLink>
         <NavLink to={'/login'} className='px-4 text-light text-decoration-none' > Login </NavLink>
         <NavLink to={'/contact'} className='px-4 text-light text-decoration-none'> Contact us </NavLink>      
