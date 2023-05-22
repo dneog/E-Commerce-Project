@@ -50,7 +50,7 @@ const ProductDetails = () => {
     largeImage: {
         src: ProductDetail.imageUrl[imageIndex],
         
-        width: 1200,
+        width: 1400,
         height: 1800
     }
 }} />

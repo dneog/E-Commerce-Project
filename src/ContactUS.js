@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import { NavLink} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -35,6 +34,7 @@ const ContactUS = () => {
     <NavLink to={'/'} className='px-4 text-light text-decoration-none' end > Home </NavLink>
         <NavLink to={'/store'} className='px-4 text-light text-decoration-none'> Store </NavLink>
         <NavLink to={'/about'} className='px-4 text-light text-decoration-none'> About </NavLink>
+        <NavLink to={'/login'} className='px-4 text-light text-decoration-none' > Login </NavLink>
         <NavLink to={'/contact'} className='px-4 text-light text-decoration-none'> Contact us </NavLink>      
     </Navbar>
     <p className='pt-5'></p>
