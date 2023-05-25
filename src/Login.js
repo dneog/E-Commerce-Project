@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { useNavigate, Routes, Route} from 'react-router-dom';
 
 const Login = () => {
-  
+ 
   const navigate= useNavigate();
   // const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading]= useState(false);
@@ -54,7 +54,8 @@ const Login = () => {
       })
           
           .then(data=> {
-          //  login(data.idToken);
+            // login(data.idToken);
+          console.log(data)
             navigate('/Store')
           }).catch(err=> {
             alert(err.message)

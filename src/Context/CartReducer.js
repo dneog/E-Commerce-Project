@@ -25,7 +25,13 @@ export const CartReducer= (state, action)=> {
             }
         }   
 
-
+        case 'CART_ITEM':
+            
+            return {
+               ...state,
+                CartList: payload,
+               
+            }
         case 'UPDATE_TOTAL':
             const updatedQuantity = state.CartList.map((item)=> {
                 if(item.id === payload.Itemid){

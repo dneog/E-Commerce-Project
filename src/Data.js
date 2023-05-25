@@ -11,15 +11,17 @@ export const datas = [
     album: 'Album 1',
     price: 100,
     id: 1,
+    quantity: 1,
     imageUrl: [
         'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
        img2,
        img3,
        img4
-
+    ]
+   
        
        
-    ] 
+    
     
     },
     
@@ -29,6 +31,7 @@ export const datas = [
     album: 'Album 2',
     price: 50,
     id: 2,
+    quantity: 1,
     imageUrl:[
         'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
         img2,
@@ -46,13 +49,15 @@ export const datas = [
     album: 'Album 3',
     price: 70,
     id: 3,
+    quantity: 1,
     imageUrl:[
         'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
         img2,
        img3,
        img4
        
-    ] 
+    ] ,
+
     
     },
     
@@ -62,6 +67,7 @@ export const datas = [
     album: 'Album 4',
     price: 100,
     id: 4,
+    quantity: 1,
     imageUrl: [
         'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
         img2,

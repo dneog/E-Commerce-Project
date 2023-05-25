@@ -7,8 +7,10 @@ import About from './About';
 import ContactUS from './ContactUS';
 import ProductDetails from './ProductDetails';
 import Login from './Login';
-
+import axios from 'axios';
+import { useEffect } from 'react';
 function App() {
+  
   return (
     <div className="App">
      

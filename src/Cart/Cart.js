@@ -12,9 +12,17 @@ const Cart = ({setShowCart}) => {
     updateTotal(Itemid, quantity)
   }
  
-  const totalPrice = CartList.reduce((current, item)=> {
-    return current + item.price * item.quantity
-  },0);
+  // const totalPrice = CartList.reduce((current, item)=> {
+  //   return current + item.price * item.quantity
+  // },0);
+  function totalItemPrice(){
+    let totalPrice=0;
+    CartList.forEach(item => {
+      totalPrice += item.price * item.quantity
+    });
+    return totalPrice
+  }
+  
 
  function message(){
   alert('Order Confirmed')
@@ -48,7 +56,7 @@ const Cart = ({setShowCart}) => {
         
     </div>
     ))}
-      <div className='text-end pe-4 pb-5'><h3>Total : ${totalPrice}</h3></div>
+      <div className='text-end pe-4 pb-5'><h3>Total : ${totalItemPrice()}</h3></div>
       <Button onClick={message}>Purchase</Button>
     </div>
     </>

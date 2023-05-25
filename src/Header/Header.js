@@ -10,7 +10,7 @@ import { UseCart } from '../Context/CartContext';
 
 const Header = () => {
   const {CartList}= UseCart()
-
+  // const totalItems= state ? state.length : 0;
   const [showCart, setShowCart]= useState(false)
   return (
 <>

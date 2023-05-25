@@ -1,10 +1,11 @@
-import React, { createContext, useContext, useReducer, useState } from 'react'
+import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
 import { CartReducer } from './CartReducer';
-
+import axios from 'axios';
 const initialValue = {
     CartList : [],
    
 }
+
 
 
 const CartContext = createContext({
@@ -46,30 +47,72 @@ const contextValue= {
 
     const [state, dispatch]= useReducer(CartReducer, initialValue);
 
-    const addToCart= (product) => {
-       
+    // const [UserData, setData]= useState([])
+    const showCartItems= async ()=> {
+        try{
+            const response= await fetch('https://crudcrud.com/api/f9c960933f5f456e833e46996ac98722/testgmailcom');
+           const data= await response.json()
+                dispatch({
+                    type: 'CART_ITEM',
+                    payload:data
+                })
+               
+                
+        } catch(err) {
+            console.log(err);
+        }
+    }
+    
+   
+      
+    
+
+    useEffect(()=> {
+
+        showCartItems()
+
+    }, []);
+
+  
+    const addToCart= async (product) => {
+        // const newItems= {...product}
         dispatch({
             type:'ADD_TO_CART',
             payload: product
                 
             
         })
+     
+        try{
+            
+          const response= await axios.post('https://crudcrud.com/api/f9c960933f5f456e833e46996ac98722/testgmailcom', product );
+            // newItems.id= response.data.id
+          
+            console.log(product);
+           
+           
+            
+         } catch(err) {
+             console.log(err);
+         }
+      
     }
 
     
    
 
-    const removeItem = (Itemid)=> {
+    const removeItem = async (Itemid)=> {
        
-       
-
         dispatch({
             type: 'REMOVE_FROM_CART',
             payload :
                Itemid
             
         })
-      
+
+        await axios.delete(`https://crudcrud.com/api/f9c960933f5f456e833e46996ac98722/testgmailcom/${Itemid}`);
+       
+       
     }
 
     const updateTotal=(Itemid, quantity)=> {
